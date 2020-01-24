@@ -119,7 +119,7 @@ class JsonPlaceholder {
     }
   }
 
-  dynamic getDataJson<T>({int length}) {
+  dynamic getJsonData<T>({int length}) {
     List<dynamic> dataComments = data['comments'];
     List<dynamic> dataAlbums = data['albums'];
     List<dynamic> dataUsers = data['users'];
