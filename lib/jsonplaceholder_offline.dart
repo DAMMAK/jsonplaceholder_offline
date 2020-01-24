@@ -1,10 +1,7 @@
 library jsonplaceholder_offline;
 
-import 'dart:async';
 import 'dart:math';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:jsonplaceholder_offline/models/album.dart';
-import 'package:jsonplaceholder_offline/models/base.dart';
 import 'package:jsonplaceholder_offline/models/comment.dart';
 import 'package:jsonplaceholder_offline/models/data.dart';
 import 'package:jsonplaceholder_offline/models/todo.dart';
@@ -122,5 +119,105 @@ class JsonPlaceholder {
     }
   }
 
-  getBas(BasePlaceholder b) {}
+  dynamic getDataJson<T>({int length}) {
+    List<dynamic> dataComments = data['comments'];
+    List<dynamic> dataAlbums = data['albums'];
+    List<dynamic> dataUsers = data['users'];
+    List<dynamic> dataPhoto = data['photos'];
+    List<dynamic> dataTodo = data['todos'];
+    List<dynamic> dataPosts = data['posts'];
+
+    if (length < 1) return throw ('length value must be greater than 1');
+    if (length > 100) return throw ('length limit is 100');
+
+    switch (T) {
+      case User:
+        {
+          if (length == 1) {
+            int rnd = Random().nextInt(dataUsers.length - 1);
+            return dataUsers[rnd];
+          }
+          List<Map<String, dynamic>> users = List<Map<String, dynamic>>();
+          for (int i = 0; i <= length - 1; i++) {
+            var random = Random().nextInt(dataUsers.length - 1);
+            users.add(dataUsers[random]);
+          }
+          return users;
+        }
+        break;
+      case Photo:
+        {
+          if (length == 1) {
+            int rnd = Random().nextInt(dataPhoto.length - 1);
+            return dataPhoto[rnd];
+          }
+          List<Map<String, dynamic>> photos = List<Map<String, dynamic>>();
+          for (int i = 0; i <= length - 1; i++) {
+            var random = Random().nextInt(dataPhoto.length - 1);
+            photos.add(dataPhoto[random]);
+          }
+          return photos;
+        }
+        break;
+      case Comment:
+        {
+          if (length == 1) {
+            int rnd = Random().nextInt(dataComments.length - 1);
+            return dataComments[rnd];
+          }
+          List<Map<String, dynamic>> comments = List<Map<String, dynamic>>();
+          for (int i = 0; i <= length - 1; i++) {
+            var random = Random().nextInt(dataComments.length - 1);
+            comments.add(dataComments[random]);
+          }
+          return comments;
+        }
+        break;
+      case Album:
+        {
+          if (length == 1) {
+            int rnd = Random().nextInt(dataAlbums.length - 1);
+            return dataAlbums[rnd];
+          }
+          List<Map<String, dynamic>> albums = List<Map<String, dynamic>>();
+          for (int i = 0; i <= length - 1; i++) {
+            var random = Random().nextInt(dataAlbums.length - 1);
+            albums.add(dataAlbums[random]);
+          }
+          return albums;
+        }
+        break;
+      case Todo:
+        {
+          if (length == 1) {
+            int rnd = Random().nextInt(dataTodo.length - 1);
+            return dataTodo[rnd];
+          }
+          List<Map<String, dynamic>> todos = List<Map<String, dynamic>>();
+          for (int i = 0; i <= length - 1; i++) {
+            var random = Random().nextInt(dataTodo.length - 1);
+            todos.add(dataTodo[random]);
+          }
+          return todos;
+        }
+        break;
+      case Post:
+        {
+          if (length == 1) {
+            int rnd = Random().nextInt(dataPosts.length - 1);
+            return dataPosts[rnd];
+          }
+          List<Map<String, dynamic>> posts = List<Map<String, dynamic>>();
+          for (int i = 0; i <= length - 1; i++) {
+            var random = Random().nextInt(dataPosts.length - 1);
+            posts.add(dataPosts[random]);
+          }
+          return posts;
+        }
+        break;
+
+      default:
+        throw ("Invalid object type");
+    }
+  }
 }

@@ -1,5 +1,3 @@
-import 'package:jsonplaceholder_offline/models/base.dart';
-
 class User {
   final int id;
   final String name;

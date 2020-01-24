@@ -37,5 +37,5 @@ to get data you will need to call `getData<T>()` method with length as a paramet
 
 ```
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      User users = jsonPlaceholder.getData<User>(length: 20);
+      User user = jsonPlaceholder.getData<User>(length:1);
 ```
