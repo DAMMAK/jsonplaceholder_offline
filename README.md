@@ -1,14 +1,34 @@
 # jsonplaceholder_offline
 
-A new Flutter package.
+A simple JsonPlaceholder https://jsonplaceholder.typicode.com/  offline package that allows you to get data for your flutter project on the go without relying on the network
+## Installation
+Add this to your package's pubspec.yaml file
 
-## Getting Started
+```
+dependencies:
+    jsonplaceholder_offline:0.01
+```
+and run
+```
+flutter packages get
+```
+## How it work
+The package is offline version of https://jsonplaceholder.typicode.com/ JsonPlaceholder.
+Jsonplaceholder has 5 different data categories:
+- User
+- Post
+- Comment
+- Album
+- Photo
+- Todo
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+to get data you will need to call getData<T>() method with length as a parameter
+***NB:***
+- *length is number of data you wish to return.*
+- *T is the generic reference of your category.*
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+  ## Usage
+```
+      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+      List<User> users = jsonPlaceholder.getData<User>(length: 20);
+```
