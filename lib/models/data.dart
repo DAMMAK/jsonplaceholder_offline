@@ -1,4 +1,4 @@
-Map<String, dynamic> getData() => {
+Map<String, dynamic> loadData() => {
       "posts": [
         {
           "userId": 1,

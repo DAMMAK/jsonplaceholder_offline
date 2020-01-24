@@ -1,6 +1,6 @@
 import 'package:jsonplaceholder_offline/models/base.dart';
 
-class User implements BasePlaceholder {
+class User {
   final int id;
   final String name;
   final String username;
@@ -20,7 +20,19 @@ class User implements BasePlaceholder {
       this.username,
       this.website});
 
-  @override
+  // @override
+  // User fromJson(Map<String, dynamic> json) {
+  //   return User(
+  //       email: json['email'],
+  //       id: json['id'],
+  //       name: json['name'],
+  //       username: json['username'],
+  //       phone: json['phone'],
+  //       website: json['website'],
+  //       address: Address.fromJson(json['address']),
+  //       company: Company.fromJson(json['company']));
+  // }
+
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
         email: json['email'],
