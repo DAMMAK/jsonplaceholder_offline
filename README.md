@@ -28,7 +28,14 @@ to get data you will need to call `getData<T>()` method with length as a paramet
 - *T is the generic reference of your category.*
 
   ## Usage
+  ### Getting list of users data
 ```
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       List<User> users = jsonPlaceholder.getData<User>(length: 20);
+```
+### Getting user data
+
+```
+      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+      User users = jsonPlaceholder.getData<User>(length: 20);
 ```
