@@ -1,8 +1,8 @@
 name: jsonplaceholder_offline
 description: A new Flutter package.
 version: 0.0.1
-author:
-homepage:
+author: Damola Adekoya <adekoyafelix@gmail.com>
+homepage: https://github.com/DAMMAK/jsonplaceholder_offline
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -21,8 +21,7 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   # To add assets to your package, add an assets section, like this:
-  assets:
-    - assets/data.json
+  # assets:
   #  - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see
