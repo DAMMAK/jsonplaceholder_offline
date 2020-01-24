@@ -22,13 +22,20 @@ Jsonplaceholder has 5 different data categories:
 - Photo
 - Todo
 
-to get data you will need to call getData<T>() method with length as a parameter
+to get data you will need to call `getData<T>()` method with length as a parameter
 ***NB:***
 - *length is number of data you wish to return.*
 - *T is the generic reference of your category.*
 
   ## Usage
+  ### Getting list of users data
 ```
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       List<User> users = jsonPlaceholder.getData<User>(length: 20);
+```
+### Getting user data
+
+```
+      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+      User users = jsonPlaceholder.getData<User>(length: 20);
 ```
