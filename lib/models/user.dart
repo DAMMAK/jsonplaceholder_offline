@@ -19,20 +19,6 @@ class User {
       this.phone,
       this.username,
       this.website});
-
-  // @override
-  // User fromJson(Map<String, dynamic> json) {
-  //   return User(
-  //       email: json['email'],
-  //       id: json['id'],
-  //       name: json['name'],
-  //       username: json['username'],
-  //       phone: json['phone'],
-  //       website: json['website'],
-  //       address: Address.fromJson(json['address']),
-  //       company: Company.fromJson(json['company']));
-  // }
-
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
         email: json['email'],
