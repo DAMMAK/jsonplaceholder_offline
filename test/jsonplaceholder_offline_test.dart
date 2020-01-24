@@ -22,7 +22,9 @@ void main() {
 
     test('it should have length > 1', () {
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      List<User> users = jsonPlaceholder.getData<User>(length: 20);
+      List<Map<String, dynamic>> users =
+          jsonPlaceholder.getDataJson<Photo>(length: 20);
+      print(users);
       expect(users.length, 20);
     });
 
