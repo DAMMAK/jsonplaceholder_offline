@@ -4,12 +4,12 @@ A simple JsonPlaceholder https://jsonplaceholder.typicode.com/  offline package 
 ## Installation
 Add this to your package's pubspec.yaml file
 
-```
+```dart
 dependencies:
-    jsonplaceholder_offline:0.01
+    jsonplaceholder_offline:0.0.1
 ```
 and run
-```
+```dart
 flutter packages get
 ```
 ## How it work
@@ -28,14 +28,26 @@ to get data you will need to call `getData<T>()` method with length as a paramet
 - *T is the generic reference of your category.*
 
   ## Usage
-  ### Getting list of users data
-```
+  ### Getting list of users object data
+```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       List<User> users = jsonPlaceholder.getData<User>(length: 20);
 ```
 ### Getting user data
 
-```
+```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       User user = jsonPlaceholder.getData<User>(length:1);
+```
+
+### Getting list of users json data
+```dart
+      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+      List<Map<String,dynamic>> users = jsonPlaceholder.getJsonData<User>(length: 20);
+```
+### Getting user data
+
+```dart
+      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+      Map<String,dynamic> user = jsonPlaceholder.getJsonData<User>(length:1);
 ```
