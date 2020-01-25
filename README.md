@@ -1,19 +1,19 @@
 # jsonplaceholder_offline
 
-A simple JsonPlaceholder https://jsonplaceholder.typicode.com/  offline package that allows you to get data for your flutter project on the go without relying on the network
+A simple package that allows you to get data for your flutter project on the go without relying on the network
 ## Installation
 Add this to your package's pubspec.yaml file
 
 ```dart
 dependencies:
-    jsonplaceholder_offline:0.0.1
+    jsonplaceholder_offline: 1.0.0
 ```
 and run
 ```dart
 flutter packages get
 ```
 ## How it work
-The package is offline version of https://jsonplaceholder.typicode.com/ JsonPlaceholder.
+The package is offline version of[JsonPlaceholder](https://jsonplaceholder.typicode.com)
 Jsonplaceholder has 6 different data categories:
 - User
 - Post
@@ -34,7 +34,7 @@ you can get data in two format either object or json.
   # Usage
 
   ## Getting Object data
-  ### list of Users
+### list of Users
 ```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       List<User> users = jsonPlaceholder.getData<User>(length: 20);
@@ -47,14 +47,14 @@ you can get data in two format either object or json.
 ```
 
 ## Getting Json data
- ### list of users data
+### list of users data
 ```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      List<Map<String,dynamic>> users = jsonPlaceholder.getJsonData<User>(length: 20);
+      List<Map<String, dynamic>> users = jsonPlaceholder.getJsonData<User>(length: 20);
 ```
 ### a single User json
 
 ```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      Map<String,dynamic> user = jsonPlaceholder.getJsonData<User>(length:1);
+      Map<String, dynamic> user = jsonPlaceholder.getJsonData<User>(length:1);
 ```
