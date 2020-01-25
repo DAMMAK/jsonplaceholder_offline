@@ -1,12 +1,12 @@
 # jsonplaceholder_offline
 
-A simple package that allows you to get data for your flutter project on the go without relying on the network
+A simple package that allows you to get data for your project on the go without relying on the network
 ## Installation
 Add this to your package's pubspec.yaml file
 
 ```dart
 dependencies:
-    jsonplaceholder_offline: 1.0.0
+    jsonplaceholder_offline: 1.0.1
 ```
 and run
 ```dart
@@ -58,3 +58,25 @@ you can get data in two format either object or json.
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       Map<String, dynamic> user = jsonPlaceholder.getJsonData<User>(length:1);
 ```
+### Get UserPost by userId
+
+```dart
+ JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+      List<dynamic> comments =
+          jsonPlaceholder.getUserPosts(userId: 1, toJson: false);
+```
+***NB:** `toJson` property can be set to true if you want the return data to be in JSON format*
+
+### Get PostComment by postId
+
+```dart
+ JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+      List<dynamic> comments =
+          jsonPlaceholder.getUserPosts(postId: 1, toJson: false);
+```
+***NB:** `toJson` property can be set to true if you want the return data to be in JSON format*
+
+
+
+
+**Data credit:** https://jsonplaceholder.typicode.com/

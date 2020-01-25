@@ -1,6 +1,7 @@
 library jsonplaceholder_offline;
 
 import 'dart:math';
+import 'package:flutter/material.dart';
 import 'package:jsonplaceholder_offline/models/album.dart';
 import 'package:jsonplaceholder_offline/models/comment.dart';
 import 'package:jsonplaceholder_offline/models/data.dart';
@@ -17,7 +18,7 @@ class JsonPlaceholder {
     data = loadData();
   }
 
-  dynamic getData<T>({int length}) {
+  dynamic getData<T>({@required int length, toJson = false}) {
     List<dynamic> dataComments = data['comments'];
     List<dynamic> dataAlbums = data['albums'];
     List<dynamic> dataUsers = data['users'];
@@ -219,5 +220,27 @@ class JsonPlaceholder {
       default:
         throw ("Invalid object type");
     }
+  }
+
+  List<dynamic> getPostComments({@required int postId, bool toJson = false}) {
+    if (postId == null || postId == 0) return throw ("provide a valid postId");
+    List<dynamic> comments = List<dynamic>();
+    List<dynamic> dataComments = data['comments'];
+    dataComments.forEach((_comment) {
+      if (_comment["postId"] == postId)
+        comments.add(toJson == false ? Comment.fromJson(_comment) : _comment);
+    });
+    return comments;
+  }
+
+  List<dynamic> getUserPosts({@required int userId, bool toJson = false}) {
+    if (userId == null || userId == 0) return throw ("provide a valid UserId");
+    List<dynamic> posts = List<dynamic>();
+    List<dynamic> dataPosts = data['posts'];
+    dataPosts.forEach((_post) {
+      if (_post["userId"] == userId)
+        posts.add(toJson == false ? Post.fromJson(_post) : _post);
+    });
+    return posts;
   }
 }

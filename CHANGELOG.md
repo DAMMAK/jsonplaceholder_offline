@@ -7,3 +7,6 @@
 - Add object to json feature
 
 ## [1.0.1]
+- Update the documentation
+- Add get PostComments feature
+- Add get UserPosts feature
