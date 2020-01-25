@@ -1,6 +1,6 @@
 name: jsonplaceholder_offline
-description: A new Flutter package.
-version: 0.0.1
+description: A simple JsonPlaceholder offline package that allows you to get data for your flutter project on the go without relying on the network
+version: 1.0.0
 author: Damola Adekoya <adekoyafelix@gmail.com>
 homepage: https://github.com/DAMMAK/jsonplaceholder_offline
 
