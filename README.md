@@ -14,7 +14,7 @@ flutter packages get
 ```
 ## How it work
 The package is offline version of https://jsonplaceholder.typicode.com/ JsonPlaceholder.
-Jsonplaceholder has 5 different data categories:
+Jsonplaceholder has 6 different data categories:
 - User
 - Post
 - Comment
@@ -22,30 +22,37 @@ Jsonplaceholder has 5 different data categories:
 - Photo
 - Todo
 
-to get data you will need to call `getData<T>()` method with length as a parameter
+you can get data in two format either object or json.
+
+- to get object data you will need to call `getData<T>(length:1)` method with length as a parameter
+- to get json data you will need to call `getJsonData<T>(length:1)` method with length as a parameter
+
 ***NB:***
-- *length is number of data you wish to return.*
+- *length is number of data you wish to return. from (min 1 - max 100)*
 - *T is the generic reference of your category.*
 
-  ## Usage
-  ### Getting list of users object data
+  # Usage
+
+  ## Getting Object data
+  ### list of Users
 ```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       List<User> users = jsonPlaceholder.getData<User>(length: 20);
 ```
-### Getting user data
+### a single User object
 
 ```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       User user = jsonPlaceholder.getData<User>(length:1);
 ```
 
-### Getting list of users json data
+## Getting Json data
+ ### list of users data
 ```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
       List<Map<String,dynamic>> users = jsonPlaceholder.getJsonData<User>(length: 20);
 ```
-### Getting user data
+### a single User json
 
 ```dart
       JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
