@@ -10,3 +10,6 @@
 - Update the documentation
 - Add get PostComments feature
 - Add get UserPosts feature
+## [1.0.2]
+- Bug fix
+- Improved documentation
