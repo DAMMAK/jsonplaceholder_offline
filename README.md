@@ -8,7 +8,7 @@ Add this to your package's pubspec.yaml file
 
 ```dart
 dependencies:
-    jsonplaceholder_offline: 1.0.1
+    jsonplaceholder_offline: 1.0.3
 ```
 
 and run
@@ -46,15 +46,15 @@ you can get data in two format either object or json.
 ### list of Users
 
 ```dart
-      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      List<User> users = jsonPlaceholder.getData<User>(length: 20);
+JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+List<User> users = jsonPlaceholder.getData<User>(length: 20);
 ```
 
 ### a single User object
 
 ```dart
-      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      User user = jsonPlaceholder.getData<User>(length:1);
+JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+User user = jsonPlaceholder.getData<User>(length:1);
 ```
 
 ## Getting Json data
@@ -62,15 +62,15 @@ you can get data in two format either object or json.
 ### list of users data
 
 ```dart
-      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      List<Map<String, dynamic>> users = jsonPlaceholder.getJsonData<User>(length: 20);
+JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+List<Map<String, dynamic>> users = jsonPlaceholder.getJsonData<User>(length: 20);
 ```
 
 ### a single User json
 
 ```dart
-      JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
-      Map<String, dynamic> user = jsonPlaceholder.getJsonData<User>(length:1);
+JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+Map<String, dynamic> user = jsonPlaceholder.getJsonData<User>(length:1);
 ```
 
 ### Get UserPost by userId
@@ -90,5 +90,18 @@ List<dynamic> comments = jsonPlaceholder.getUserPosts(postId: 1, toJson: false);
 ```
 
 **\*NB:** `toJson` property can be set to true if you want the return data to be in JSON format\*
+
+## Mocking HTTP Request
+if you want to get your data in HTTP Request behaviour, you can mock the behaviour using `mockHttp<T>({RESTMETHOD httpMethod, int delay, int length})`
+
+```
+JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
+Map<String, dynamic> data = await jsonPlaceholder.mockHttp<User>(httpMethod: RESTMETHOD.GET, length: 10, delay: 20);
+
+```
+NB:
+- httpMethod: {GET,POST,PUT,DELETE}
+- delay: This is the number of seconds you want your request to take before it return data.
+- length: This is the number of data you want to return
 
 **Data credit:** https://jsonplaceholder.typicode.com/
