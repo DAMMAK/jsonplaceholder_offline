@@ -11,6 +11,8 @@ import 'models/photo.dart';
 import 'models/post.dart';
 import 'models/user.dart';
 
+enum RESTMETHOD { GET, POST, PUT, DELETE }
+
 /// A Calculator.
 class JsonPlaceholder {
   var data;
@@ -242,5 +244,16 @@ class JsonPlaceholder {
         posts.add(toJson == false ? Post.fromJson(_post) : _post);
     });
     return posts;
+  }
+
+  dynamic mockHttp<T>({RESTMETHOD httpMethod, int delay, int length}) {
+    switch (httpMethod) {
+      case RESTMETHOD.GET:
+        return Future.delayed(Duration(seconds: delay), () {
+          return getJsonData<T>(length: length);
+        });
+        break;
+      default:
+    }
   }
 }

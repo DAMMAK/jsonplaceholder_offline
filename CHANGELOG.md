@@ -13,3 +13,6 @@
 ## [1.0.2]
 - Bug fix
 - Improved documentation
+## [1.0.3]
+- Add mockHttp feature
+- updated the documentation
