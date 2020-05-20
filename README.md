@@ -94,7 +94,7 @@ List<dynamic> comments = jsonPlaceholder.getUserPosts(postId: 1, toJson: false);
 ## Mocking HTTP Request
 if you want to get your data in HTTP Request behaviour, you can mock the behaviour using `mockHttp<T>({RESTMETHOD httpMethod, int delay, int length})`
 
-```
+```dart
 JsonPlaceholder jsonPlaceholder = JsonPlaceholder();
 Map<String, dynamic> data = await jsonPlaceholder.mockHttp<User>(httpMethod: RESTMETHOD.GET, length: 10, delay: 20);
 
